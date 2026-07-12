@@ -10,6 +10,9 @@ export const CHART = {
   text: '#f2f3f8',
 } as const
 
+// Distinguishable line colors for multi country charts, night sky family.
+export const SERIES_COLORS = ['#4d7cff', '#9bb3ff', '#f2f3f8', '#8b90a5', '#3350c9'] as const
+
 export const TOOLTIP_STYLE = {
   background: CHART.surface,
   border: `1px solid ${CHART.grid}`,
