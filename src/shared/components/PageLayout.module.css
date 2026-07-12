@@ -30,3 +30,17 @@
   flex-direction: column;
   gap: var(--space-5);
 }
+
+@media (max-width: 700px) {
+  .page {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

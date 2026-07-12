@@ -6,7 +6,9 @@ export async function askAi(question: string): Promise<string> {
     body: { question },
   })
   if (error) {
-    throw new Error('AI request failed. Check that the edge function is deployed.')
+    throw new Error(
+      'The AI module is not connected yet. Deploy the ai-explain function and add the API key to enable it.',
+    )
   }
   if (data?.error) {
     throw new Error(data.error)
