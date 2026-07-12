@@ -1,3 +1,7 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/archivo';
+@import './shared/styles/tokens.css';
+
 *,
 *::before,
 *::after {
@@ -6,7 +10,17 @@
 
 body {
   margin: 0;
-  background: #ffffff;
-  color: #000000;
-  font-family: system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }

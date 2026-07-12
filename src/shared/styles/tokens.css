@@ -1,0 +1,31 @@
+/* MacroScope design tokens. The single source of truth for the visual style.
+   Rules: light theme only, monochrome plus one accent color,
+   sharp corners (2px maximum), no gradients, no shadows. */
+
+:root {
+  /* colors */
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #666666;
+  --color-border: #e5e5e5;
+  --color-accent: #0038ff;
+  --color-accent-hover: #002fd6;
+  --color-error: #d0021b;
+
+  /* typography */
+  --font-heading: 'Space Grotesk Variable', sans-serif;
+  --font-body: 'Archivo Variable', sans-serif;
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* corners */
+  --radius: 2px;
+}
