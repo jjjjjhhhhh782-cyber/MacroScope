@@ -13,6 +13,12 @@
     border-color 120ms ease;
 }
 
+.link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
