@@ -1,5 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import { Button, Card, Input, PageLayout, Table } from '../shared/components'
 import type { TableColumn } from '../shared/components'
+import { signOut } from '../backend/auth'
+import { useAuth } from './auth/AuthProvider'
 
 interface SampleRow {
   country: string
@@ -20,11 +23,28 @@ const sampleRows: SampleRow[] = [
 ]
 
 export default function AppHome() {
+  const { session } = useAuth()
+  const navigate = useNavigate()
+
+  async function handleSignOut() {
+    await signOut()
+    navigate('/')
+  }
+
   return (
     <PageLayout
       title="Component preview"
       subtitle="Temporary page. The dashboard arrives in Phase 6."
-      actions={<Button variant="accent">Accent action</Button>}
+      actions={
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
+          <span style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>
+            {session?.user.email}
+          </span>
+          <Button variant="secondary" onClick={handleSignOut}>
+            Sign out
+          </Button>
+        </div>
+      }
     >
       <Card title="Buttons">
         <div style={{ display: 'flex', gap: 'var(--space-3)' }}>

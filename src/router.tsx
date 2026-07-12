@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+import RequireAuth from './app/auth/RequireAuth'
 
 const LandingPage = lazy(() => import('./landing/LandingPage'))
 const AppHome = lazy(() => import('./app/AppHome'))
@@ -11,6 +12,13 @@ export const router = createBrowserRouter([
   { path: '/', element: <LandingPage /> },
   { path: '/signin', element: <SignInPage /> },
   { path: '/signup', element: <SignUpPage /> },
-  { path: '/app', element: <AppHome /> },
+  {
+    path: '/app',
+    element: (
+      <RequireAuth>
+        <AppHome />
+      </RequireAuth>
+    ),
+  },
   { path: '*', element: <NotFound /> },
 ])
