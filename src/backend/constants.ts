@@ -38,6 +38,8 @@ export const COUNTRIES: Country[] = [
   { code: 'ESP', name: 'Spain' },
   { code: 'CHE', name: 'Switzerland' },
   { code: 'NOR', name: 'Norway' },
+  { code: 'BLR', name: 'Belarus' },
+  { code: 'VEN', name: 'Venezuela' },
 ]
 
 export function countryName(code: string): string {
