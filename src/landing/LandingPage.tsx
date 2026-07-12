@@ -70,7 +70,7 @@ export default function LandingPage() {
       </header>
 
       <main>
-        <section className={styles.hero}>
+        <section className={`${styles.hero} ${styles.stars}`}>
           <h1 className={styles.heroTitle}>The world economy, made legible</h1>
           <p className={styles.heroText}>
             MacroScope turns open World Bank data into clear and fast analytics. Track the impact

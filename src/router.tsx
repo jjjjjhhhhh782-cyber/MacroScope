@@ -3,9 +3,15 @@ import { createBrowserRouter } from 'react-router-dom'
 import RequireAuth from './app/auth/RequireAuth'
 
 const LandingPage = lazy(() => import('./landing/LandingPage'))
-const AppHome = lazy(() => import('./app/AppHome'))
 const SignInPage = lazy(() => import('./app/auth/SignInPage'))
 const SignUpPage = lazy(() => import('./app/auth/SignUpPage'))
+const AppLayout = lazy(() => import('./app/AppLayout'))
+const DashboardPage = lazy(() => import('./app/DashboardPage'))
+const SanctionsPage = lazy(() => import('./app/modules/SanctionsPage'))
+const InflationPage = lazy(() => import('./app/modules/InflationPage'))
+const UnemploymentPage = lazy(() => import('./app/modules/UnemploymentPage'))
+const QualityOfLifePage = lazy(() => import('./app/modules/QualityOfLifePage'))
+const AiExplainerPage = lazy(() => import('./app/modules/AiExplainerPage'))
 const NotFound = lazy(() => import('./shared/components/NotFound'))
 
 export const router = createBrowserRouter([
@@ -16,9 +22,17 @@ export const router = createBrowserRouter([
     path: '/app',
     element: (
       <RequireAuth>
-        <AppHome />
+        <AppLayout />
       </RequireAuth>
     ),
+    children: [
+      { index: true, element: <DashboardPage /> },
+      { path: 'sanctions', element: <SanctionsPage /> },
+      { path: 'inflation', element: <InflationPage /> },
+      { path: 'unemployment', element: <UnemploymentPage /> },
+      { path: 'quality-of-life', element: <QualityOfLifePage /> },
+      { path: 'ai-explainer', element: <AiExplainerPage /> },
+    ],
   },
   { path: '*', element: <NotFound /> },
 ])

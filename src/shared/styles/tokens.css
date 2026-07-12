@@ -1,16 +1,20 @@
 /* MacroScope design tokens. The single source of truth for the visual style.
-   Rules: light theme only, monochrome plus one accent color,
-   sharp corners (2px maximum), no gradients, no shadows. */
+   Theme: night sky. Deep dark blue black background, light text,
+   one bright blue accent, subtle stars on the landing.
+   Rules: sharp corners (2px maximum), no shadows, minimalism. */
 
 :root {
+  color-scheme: dark;
+
   /* colors */
-  --color-bg: #ffffff;
-  --color-text: #000000;
-  --color-text-muted: #666666;
-  --color-border: #e5e5e5;
-  --color-accent: #0038ff;
-  --color-accent-hover: #002fd6;
-  --color-error: #d0021b;
+  --color-bg: #0a0a12;
+  --color-surface: #10101c;
+  --color-text: #f2f3f8;
+  --color-text-muted: #8b90a5;
+  --color-border: #20243a;
+  --color-accent: #4d7cff;
+  --color-accent-hover: #6b93ff;
+  --color-error: #ff5c5c;
 
   /* typography */
   --font-heading: 'Space Grotesk Variable', sans-serif;

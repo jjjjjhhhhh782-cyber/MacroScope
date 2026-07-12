@@ -30,12 +30,12 @@
 }
 
 .primary:hover:not(:disabled) {
-  background: #333333;
+  background: #d9dbe8;
 }
 
 .accent {
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-bg);
 }
 
 .accent:hover:not(:disabled) {
