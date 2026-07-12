@@ -2,6 +2,8 @@
 
 Macroeconomic analytics platform. Five modules: Sanctions Impact, Inflation Forecast, Unemployment Analysis, Quality of Life Index, AI Crisis Explainer.
 
+Live: https://macro-scope-sooty.vercel.app
+
 ## Stack
 
 - React + TypeScript (Vite)
