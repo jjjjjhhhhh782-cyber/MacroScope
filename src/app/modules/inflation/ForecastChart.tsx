@@ -8,29 +8,22 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { IndicatorPoint } from '../../backend/worldbank'
-import { CHART, TOOLTIP_STYLE } from './chartStyle'
+import { CHART, TOOLTIP_STYLE } from '../../../shared/charts/chartStyle'
+import type { ForecastPoint } from './forecast'
 
-export interface ChartMarker {
-  year: number
-  label: string
-}
-
-interface IndicatorLineChartProps {
-  data: IndicatorPoint[]
+interface ForecastChartProps {
+  data: ForecastPoint[]
+  boundaryYear: number
   unit?: string
-  seriesName?: string
-  markers?: ChartMarker[]
   height?: number
 }
 
-export default function IndicatorLineChart({
+export default function ForecastChart({
   data,
-  unit = '',
-  seriesName = 'Value',
-  markers = [],
-  height = 260,
-}: IndicatorLineChartProps) {
+  boundaryYear,
+  unit = '%',
+  height = 300,
+}: ForecastChartProps) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <LineChart data={data} margin={{ top: 12, right: 16, bottom: 4, left: 0 }}>
@@ -55,26 +48,37 @@ export default function IndicatorLineChart({
         <Tooltip
           contentStyle={TOOLTIP_STYLE}
           labelStyle={{ color: CHART.axis }}
-          formatter={(value) => [`${Number(value).toFixed(2)}${unit}`, seriesName]}
+          formatter={(value, name) => [`${Number(value).toFixed(2)}${unit}`, String(name)]}
           labelFormatter={(label) => String(label)}
         />
-        {markers.map((marker) => (
-          <ReferenceLine
-            key={marker.year}
-            x={marker.year}
-            stroke={CHART.axis}
-            strokeDasharray="4 4"
-            label={{ value: marker.label, fill: CHART.axis, fontSize: 11, position: 'insideTop' }}
-          />
-        ))}
+        <ReferenceLine
+          x={boundaryYear}
+          stroke={CHART.axis}
+          strokeDasharray="4 4"
+          label={{
+            value: 'Forecast',
+            fill: CHART.axis,
+            fontSize: 11,
+            position: 'insideTopRight',
+          }}
+        />
         <Line
           type="monotone"
           dataKey="value"
+          name="Actual"
           stroke={CHART.accent}
           strokeWidth={2}
           dot={false}
           connectNulls
-          name={seriesName}
+        />
+        <Line
+          type="monotone"
+          dataKey="forecast"
+          name="Forecast"
+          stroke={CHART.accentSoft}
+          strokeWidth={2}
+          strokeDasharray="6 4"
+          dot={false}
         />
       </LineChart>
     </ResponsiveContainer>
