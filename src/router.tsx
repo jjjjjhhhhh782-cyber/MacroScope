@@ -10,7 +10,7 @@ const DashboardPage = lazy(() => import('./app/DashboardPage'))
 const SanctionsPage = lazy(() => import('./app/modules/sanctions/SanctionsPage'))
 const InflationPage = lazy(() => import('./app/modules/inflation/InflationPage'))
 const UnemploymentPage = lazy(() => import('./app/modules/unemployment/UnemploymentPage'))
-const QualityOfLifePage = lazy(() => import('./app/modules/QualityOfLifePage'))
+const QualityOfLifePage = lazy(() => import('./app/modules/quality/QualityOfLifePage'))
 const AiExplainerPage = lazy(() => import('./app/modules/AiExplainerPage'))
 const NotFound = lazy(() => import('./shared/components/NotFound'))
 

@@ -1,0 +1,105 @@
+.countryLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.countryLink:hover {
+  color: var(--color-accent);
+}
+
+.score {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.note {
+  margin: var(--space-4) 0 0;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.detailScore {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.detailValue {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
+}
+
+.detailLabel {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.bars {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 220px 1fr 40px;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.barLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.barWeight {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.track {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--color-accent);
+}
+
+.barValue {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.method {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 700px) {
+  .barRow {
+    grid-template-columns: 1fr 40px;
+  }
+
+  .barLabel {
+    grid-column: 1 / -1;
+  }
+}
